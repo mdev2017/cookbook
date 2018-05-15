@@ -1,0 +1,14 @@
+<div class="auth">
+  <form
+    class="login-form"
+    [formGroup]="loginForm"
+    (ngSubmit)="login(loginForm)"
+    *ngIf="!(loginService.user | async)"
+  >
+    <input type="text" class="login-input" formControlName="email">
+    <input type="text" class="login-input" formControlName="password">
+    <button class="login-btn">Login</button>
+  </form>
+
+  <button class="logout-btn" (click)="logout()" *ngIf="loginService.user | async">Logout</button>
+</div>

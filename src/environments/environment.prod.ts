@@ -6,6 +6,6 @@ export const environment = {
     databaseURL: "https://cookbook-dan.firebaseio.com",
     projectId: "cookbook-dan",
     storageBucket: "cookbook-dan.appspot.com",
-    messagingSenderId: "437009926258"
+    messagingSenderId: "437009926258",
   },
 };

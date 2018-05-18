@@ -9,7 +9,7 @@ import { CollectionReference } from '@firebase/firestore-types';
 @Component({
   selector: 'cb-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login(this.loginForm.value)
+    this.loginService.login(this.loginForm.value);
   }
 
   logout() {

@@ -4,12 +4,12 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
   user: Observable<firebase.User>;
 
-  constructor(private firebaseAuth: AngularFireAuth,) {
+  constructor(private firebaseAuth: AngularFireAuth) {
     this.user = firebaseAuth.authState;
    }
 
@@ -18,12 +18,12 @@ export class LoginService {
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(data => {
-        localStorage['user'] = JSON.stringify(data.user);
+        localStorage.setItem('user', JSON.stringify(data.user));
       });
   }
 
   logout() {
     this.firebaseAuth.auth.signOut();
-    localStorage['user'] = '';
+    localStorage.setItem('user', '');
   }
 }

@@ -1,20 +1,19 @@
-.auth {
+.registration {
   display: grid;
   width: 400px;
   margin: 0 auto;
-  padding-bottom: 20px;
 
-  .login-form {
+  .registration-form {
     display: grid;
     grid-row-gap: 10px;
     font-size: 16px;
     font-family: "PT Sans";
   
-    .login-input {
+    .register-input {
       padding: 10px 20px;
     }
   
-    .login-btn {
+    .register-btn {
       padding: 10px 20px;
       background-color: #58D68D;
       cursor: pointer;
@@ -22,16 +21,6 @@
       &:hover {
         background-color: #2ECC71;
       }
-    }
-  }
-  
-  .logout-btn {
-    padding: 10px 20px;
-    background-color: #F08080;
-    cursor: pointer;
-  
-    &:hover {
-      background-color: #CD5C5C;
     }
   }
 }

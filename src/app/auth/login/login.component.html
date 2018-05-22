@@ -2,7 +2,7 @@
   <form
     class="login-form"
     [formGroup]="loginForm"
-    (ngSubmit)="login(loginForm)"
+    (ngSubmit)="login()"
     *ngIf="!(loginService.user | async)"
   >
     <input type="text" class="login-input" formControlName="email">

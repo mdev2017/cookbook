@@ -6,6 +6,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 import { SignUpComponent } from './signup/signup.component';
 import { AuthService } from './auth.service';
 
@@ -20,6 +21,7 @@ import { AuthService } from './auth.service';
   declarations: [
     LoginComponent,
     SignUpComponent,
+    LogoutComponent,
   ],
   providers: [
     AuthService,

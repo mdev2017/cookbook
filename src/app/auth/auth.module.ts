@@ -6,9 +6,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { LoginService } from './login/login.service';
-import { RegistrationService } from './registration/registration.service';
+import { SignUpComponent } from './signup/signup.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   imports: [
@@ -20,15 +19,14 @@ import { RegistrationService } from './registration/registration.service';
   ],
   declarations: [
     LoginComponent,
-    RegistrationComponent,
+    SignUpComponent,
   ],
   providers: [
-    LoginService,
-    RegistrationService,
+    AuthService,
   ],
   exports: [
     LoginComponent,
-    RegistrationComponent,
+    SignUpComponent,
   ],
 })
 export class AuthModule { }

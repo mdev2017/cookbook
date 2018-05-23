@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 
-import { LoginService } from './login.service';
+import { AuthService } from '../auth.service';
 import { CollectionReference } from '@firebase/firestore-types';
 
 @Component({
@@ -18,10 +18,10 @@ export class LoginComponent {
   });
 
   constructor(
-    private loginService: LoginService,
+    private authService: AuthService,
   ) {}
 
   login() {
-    this.loginService.login(this.loginForm.value);
+    this.authService.login(this.loginForm.value);
   }
 }

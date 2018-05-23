@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
+
 import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
+export class AuthService {
   user: Observable<firebase.User>;
 
   constructor(private firebaseAuth: AngularFireAuth) {
@@ -26,6 +27,10 @@ export class LoginService {
     this.firebaseAuth.auth.signOut().then(() => {
       localStorage.removeItem('token');
     });
+  }
+
+  signUp({ email, password }) {
+    this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password);
   }
 
   public isAuthenticated(): boolean {

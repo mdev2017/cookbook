@@ -15,7 +15,7 @@ export class AuthService {
    }
 
   login({ email, password }) {
-    this.firebaseAuth
+    return this.firebaseAuth
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(data => {
@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   logout() {
-    this.firebaseAuth.auth.signOut().then(() => {
+    return this.firebaseAuth.auth.signOut().then(() => {
       localStorage.removeItem('token');
     });
   }

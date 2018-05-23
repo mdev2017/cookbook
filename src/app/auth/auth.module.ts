@@ -4,10 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 import { LoginService } from './login/login.service';
 import { RegistrationService } from './registration/registration.service';
-import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { RegistrationComponent } from './registration/registration.component';
     HttpClientModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
+    AuthRoutingModule,
   ],
   declarations: [
     LoginComponent,

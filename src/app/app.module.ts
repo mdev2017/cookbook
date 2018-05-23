@@ -21,10 +21,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AuthModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

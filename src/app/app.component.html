@@ -1,4 +1,4 @@
 <div class="cookbook">
-  <cb-navigation-menu></cb-navigation-menu>
+  <cb-navigation-menu *ngIf="loginService.isAuthenticated()"></cb-navigation-menu>
   <router-outlet></router-outlet>
 </div>

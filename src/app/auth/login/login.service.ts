@@ -18,12 +18,17 @@ export class LoginService {
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(data => {
-        localStorage.setItem('user', JSON.stringify(data.user));
+        localStorage.setItem('token', data.refreshToken);
       });
   }
 
   logout() {
-    this.firebaseAuth.auth.signOut();
-    localStorage.setItem('user', '');
+    this.firebaseAuth.auth.signOut().then(() => {
+      localStorage.removeItem('token');
+    });
+  }
+
+  public isAuthenticated(): boolean {
+    return !!localStorage.getItem('token');
   }
 }

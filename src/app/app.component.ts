@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './auth/login/login.service';
 
 @Component({
   selector: 'cb-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(public loginService: LoginService) {}
 }

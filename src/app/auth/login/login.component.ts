@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    if (this.authService.isAuthenticated()) {
-      this.navigateByDefault();
-    }
+    this.authService.isAuthenticated.subscribe(authenticated => {
+      authenticated && this.navigateByDefault();
+    });
   }
 
   login() {

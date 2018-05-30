@@ -1,4 +1,4 @@
 <div class="cookbook">
-  <cb-navigation-menu *ngIf="authService.isAuthenticated()"></cb-navigation-menu>
+  <cb-navigation-menu *ngIf="(authService.isAuthenticated | async)"></cb-navigation-menu>
   <router-outlet></router-outlet>
 </div>

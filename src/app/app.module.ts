@@ -5,7 +5,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { AuthModule } from './auth/auth.module';
 
-import { AuthGuardService } from './auth/auth-guard.service';
+import { AuthGuard } from './auth/auth.guard';
 
 import { environment } from '../environments/environment.prod';
 import { AppComponent } from './app.component';
@@ -28,7 +28,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AuthModule,
     AppRoutingModule,
   ],
-  providers: [AuthGuardService],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

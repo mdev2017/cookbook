@@ -4,10 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
-import { LoginService } from './login/login.service';
-import { RegistrationService } from './registration/registration.service';
-import { RegistrationComponent } from './registration/registration.component';
+import { LogoutComponent } from './logout/logout.component';
+import { SignUpComponent } from './signup/signup.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   imports: [
@@ -15,18 +16,19 @@ import { RegistrationComponent } from './registration/registration.component';
     HttpClientModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
+    AuthRoutingModule,
   ],
   declarations: [
     LoginComponent,
-    RegistrationComponent,
+    SignUpComponent,
+    LogoutComponent,
   ],
   providers: [
-    LoginService,
-    RegistrationService,
+    AuthService,
   ],
   exports: [
     LoginComponent,
-    RegistrationComponent,
+    SignUpComponent,
   ],
 })
 export class AuthModule { }

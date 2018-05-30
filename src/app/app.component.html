@@ -1,6 +1,4 @@
-<cb-login></cb-login>
-<cb-registration></cb-registration>
 <div class="cookbook">
-  <cb-navigation-menu></cb-navigation-menu>
+  <cb-navigation-menu *ngIf="(authService.isAuthenticated | async)"></cb-navigation-menu>
   <router-outlet></router-outlet>
 </div>

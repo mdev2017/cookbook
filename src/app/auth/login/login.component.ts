@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 
-import { LoginService } from './login.service';
+import { AuthService } from '../auth.service';
 import { CollectionReference } from '@firebase/firestore-types';
 
 @Component({
@@ -18,19 +19,24 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
-    private loginService: LoginService,
-  ) { }
+    private authService: AuthService,
+    private router: Router,
+  ) {}
 
   ngOnInit() {
-
+    this.authService.isAuthenticated.subscribe(authenticated => {
+      authenticated && this.navigateByDefault();
+    });
   }
 
   login() {
-    this.loginService.login(this.loginForm.value);
+    this.authService.login(this.loginForm.value)
+      .then(() => {
+        this.navigateByDefault();
+      });
   }
 
-  logout() {
-    this.loginService.logout();
+  private navigateByDefault() {
+    this.router.navigate(['/']);
   }
-
 }

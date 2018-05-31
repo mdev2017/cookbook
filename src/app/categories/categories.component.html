@@ -4,14 +4,14 @@
     *ngFor="let category of categories$ | async"
   >
     <div
-      class="category-img"
+      class="category-image"
       [ngStyle]="{'background-image': 'url(' + (category.image || '') + ')'}"
     ></div>
     <span class="category-name">
       {{category.name}}
     </span>
     <span class="category-recipies">
-        {{category.recipies_amount}} {{category.recipies_amount == 1 ? 'recipe' : 'recipes'}}
+        {{category.recipesAmount}} {{category.recipesAmount === 1 ? 'recipe' : 'recipes'}}
     </span>
   </div>
 </div>

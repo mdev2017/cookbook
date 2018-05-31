@@ -8,7 +8,7 @@ import { Category } from './category.model';
   providedIn: 'root',
 })
 export class CategoriesService {
-  collection: AngularFirestoreCollection<Category>;
+  private collection: AngularFirestoreCollection<Category>;
 
   constructor(private db: AngularFirestore) {
     this.collection = this.db.collection('categories');

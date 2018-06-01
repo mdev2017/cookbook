@@ -1,3 +1,17 @@
-<p>
-  categories works!
-</p>
+<div class="categories-list">
+  <div
+    class="category-item"
+    *ngFor="let category of categories$ | async"
+  >
+    <div
+      class="category-image"
+      [ngStyle]="{'background-image': 'url(' + (category.image || '') + ')'}"
+    ></div>
+    <span class="category-name">
+      {{category.name}}
+    </span>
+    <span class="category-recipies">
+        {{category.recipesAmount}} {{category.recipesAmount === 1 ? 'recipe' : 'recipes'}}
+    </span>
+  </div>
+</div>

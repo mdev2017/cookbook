@@ -8,7 +8,6 @@ import { CategoriesService } from './categories.service';
   selector: 'cb-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss'],
-  providers: [CategoriesService],
 })
 export class CategoriesComponent implements OnInit {
   categories$: Observable<Category[]>;

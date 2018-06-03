@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
     email: new FormControl(),
     password: new FormControl(),
   });
+  isPasswordType = true;
 
   constructor(
     private authService: AuthService,

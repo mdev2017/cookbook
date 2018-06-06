@@ -6,10 +6,12 @@
     <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
       <label for="email">Email</label>
       <input
-        type="text"
+        type="email"
         class="login-input"
         formControlName="email"
         id="email"
+        email
+        required
       >
       <div class="password-container">
         <label for="password">Password</label>
@@ -20,17 +22,15 @@
           id="password"
         >
         <i
-          class="fa fa-lg fa-eye password-eye-icon"
+          class="fa fa-lg password-eye-icon"
           (click)="isPasswordType = !isPasswordType"
-          *ngIf="!isPasswordType"
-        ></i>
-        <i
-          class="fa fa-lg fa-eye-slash password-eye-icon"
-          (click)="isPasswordType = !isPasswordType"
-          *ngIf="isPasswordType"
+          [ngClass]="{'fa-eye': !isPasswordType, 'fa-eye-slash': isPasswordType}"
         ></i>
       </div>
-      <button class="login-button">Login</button>
+      <button
+        class="login-button"
+        [disabled]="!loginForm.valid"
+      >Login</button>
     </form>
   </div>
   <div class="login-question">

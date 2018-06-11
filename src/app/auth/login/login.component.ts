@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
@@ -13,19 +13,23 @@ import { CollectionReference } from '@firebase/firestore-types';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  loginForm = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl(),
-  });
+  loginForm: FormGroup;
+  isPasswordType = true;
 
   constructor(
     private authService: AuthService,
     private router: Router,
+    private formBuilder: FormBuilder,
   ) {}
 
   ngOnInit() {
     this.authService.isAuthenticated.subscribe(authenticated => {
       authenticated && this.navigateByDefault();
+    });
+
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
 

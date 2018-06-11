@@ -1,11 +1,40 @@
 <div class="auth">
-  <form
-    class="login-form"
-    [formGroup]="loginForm"
-    (ngSubmit)="login()"
-  >
-    <input type="text" class="login-input" formControlName="email">
-    <input type="text" class="login-input" formControlName="password">
-    <button class="login-btn">Login</button>
-  </form>
+  <div class="login-title">
+    CookBook
+  </div>
+  <div class="login-container">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        class="login-input"
+        formControlName="email"
+        id="email"
+        email
+        required
+      >
+      <div class="password-container">
+        <label for="password">Password</label>
+        <input
+          type="{{isPasswordType ? 'password' : 'text'}}"
+          class="login-input"
+          formControlName="password"
+          id="password"
+        >
+        <i
+          class="fa fa-lg password-eye-icon"
+          (click)="isPasswordType = !isPasswordType"
+          [ngClass]="{'fa-eye': !isPasswordType, 'fa-eye-slash': isPasswordType}"
+        ></i>
+      </div>
+      <button
+        class="login-button"
+        [disabled]="!loginForm.valid"
+      >Login</button>
+    </form>
+  </div>
+  <div class="login-question">
+    Don’t have own CookBook? <a routerLink="/signup">Register now!</a>
+  </div>
+  <img class="login-image" src="assets/images/login.svg">
 </div>

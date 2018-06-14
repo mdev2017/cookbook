@@ -1,5 +1,9 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+@import "./styles/buttons.scss";
+@import "./styles/links.scss";
+@import "./styles/inputs.scss";
+
 html,
 body {
   height: 100%;

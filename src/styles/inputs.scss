@@ -1,0 +1,12 @@
+@import "./colors.scss";
+
+.cb-common-input {
+  background-color: $background-input;
+  border-radius: 5.5px;
+  border: solid 1px $border-input;
+
+  &:focus {
+    outline: none;
+    border: solid 1px $border-input-focus;
+  }
+}

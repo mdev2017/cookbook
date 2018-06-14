@@ -1,0 +1,9 @@
+@import "./colors.scss";
+
+.cb-common-link {
+  color: $common-orange;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

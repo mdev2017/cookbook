@@ -1,26 +1,133 @@
+@import "../../../styles/fonts.scss";
+@import "../../../styles/colors.scss";
+
 .sign-up {
   display: grid;
-  width: 400px;
-  margin: 0 auto;
+  height: 100%;
+  grid-template-columns: 3fr 1fr;
+  justify-items: center;
+  font-family: $open-sans;
+  color: $common-text;
+}
 
-  .sign-up-form {
-    display: grid;
-    grid-row-gap: 10px;
-    font-size: 16px;
-    font-family: "PT Sans";
-  
-    .sign-up-input {
-      padding: 10px 20px;
-    }
-  
-    .sign-up-btn {
-      padding: 10px 20px;
-      background-color: #58D68D;
-      cursor: pointer;
-  
-      &:hover {
-        background-color: #2ECC71;
-      }
-    }
+.sign-up__container {
+  display: grid;
+  grid-template-rows: 180px 430px 30px;
+  align-items: center;
+  height: 100%;
+  max-width: 420px;
+  width: 100%;
+}
+
+.sign-up__form-container {
+  display: flex;
+  align-items: center;
+  max-width: 420px;
+  max-height: 400px;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.sign-up__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+}
+
+.sign-up__input {
+  max-width: 320px;
+  height: 44px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
+label,
+.sign-up__input {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sign-up__password-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .password-eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 45px;
+    opacity: 0.3;
+    cursor: pointer;
+  }
+}
+
+.sign-up__submit-button {
+  margin-top: 20px;
+}
+
+.sign-up__image {
+  position: fixed;
+  max-height: 100%;
+  height: auto;
+  right: 0;
+  content: url('../../../assets/images/login.png');
+  background-repeat: no-repeat;
+}
+
+.sign-up__title {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.sign-up__question {
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 100;
+  min-width: 270px;
+  color: $second-text;
+}
+
+.ng-invalid.ng-touched:not(form){
+  border: solid 1px red;
+}
+
+@media screen and (max-width: 440px) {
+  .sign-up__container {
+    justify-content: space-around;
+  }
+
+  .sign-up__form-container {
+    max-width: 310px;
+    max-height: 340px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sign-up__form {
+    max-width: 280px;
+  }
+
+  .sign-up__input {
+    max-width: 280px;
+    height: 44px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sign-up {
+    grid-template-columns: 1fr;
+  }
+
+  .sign-up__image {
+    content: url('../../../assets/images/login_mobile.png');
+  }
+}
+
+@media screen and (max-height: 570px) {
+  .sign-up__container {
+    grid-template-rows: 100px 430px 30px;
   }
 }

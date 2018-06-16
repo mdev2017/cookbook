@@ -30,7 +30,13 @@ export class AuthService {
     });
   }
 
-  signUp({ email, password }) {
-    this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password);
+  signUp({ email, password, displayName }) {
+    return this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        this.firebaseAuth.auth.currentUser.updateProfile({
+          displayName,
+          photoURL: '',
+        });
+      });
   }
 }

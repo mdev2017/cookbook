@@ -25,9 +25,7 @@ export class AuthService {
   }
 
   logout() {
-    return this.firebaseAuth.auth.signOut().then(() => {
-      this.router.navigate(['/login']);
-    });
+    return this.firebaseAuth.auth.signOut();
   }
 
   signUp({ email, password, displayName }) {

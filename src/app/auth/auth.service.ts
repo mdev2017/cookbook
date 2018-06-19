@@ -25,12 +25,16 @@ export class AuthService {
   }
 
   logout() {
-    return this.firebaseAuth.auth.signOut().then(() => {
-      this.router.navigate(['/login']);
-    });
+    return this.firebaseAuth.auth.signOut();
   }
 
-  signUp({ email, password }) {
-    this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password);
+  signUp({ email, password, displayName }) {
+    return this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        this.firebaseAuth.auth.currentUser.updateProfile({
+          displayName,
+          photoURL: '',
+        });
+      });
   }
 }

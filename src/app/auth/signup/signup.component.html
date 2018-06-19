@@ -1,11 +1,50 @@
 <div class="sign-up">
-  <form
-    class="sign-up-form"
-    [formGroup]="signUpForm"
-    (ngSubmit)="signUp()"
-  >
-    <input type="text" class="sign-up-input" formControlName="email">
-    <input type="text" class="sign-up-input" formControlName="password">
-    <button class="sign-up-btn">Sign up</button>
-  </form>
+  <div class="sign-up__container">
+    <div class="sign-up__title">
+      <img src="assets/images/logo-login.svg" alt="">
+    </div>
+    <div class="sign-up__form-container">
+      <form class="sign-up__form" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="cb-common-input sign-up__input"
+          formControlName="displayName"
+          id="username"
+          required
+        >
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="cb-common-input sign-up__input"
+          formControlName="email"
+          id="email"
+          email
+          required
+        >
+        <div class="sign-up__password-container">
+          <label for="password">Password</label>
+          <input
+            type="{{isPasswordType ? 'password' : 'text'}}"
+            class="cb-common-input sign-up__input"
+            formControlName="password"
+            id="password"
+          >
+          <i
+            class="fa fa-lg password-eye-icon"
+            (click)="isPasswordType = !isPasswordType"
+            [ngClass]="{'fa-eye': !isPasswordType, 'fa-eye-slash': isPasswordType}"
+          ></i>
+        </div>
+        <button
+          class="cb-common-btn sign-up__submit-button"
+          [disabled]="!signUpForm.valid"
+        ><i class="fa fa-lg fa-check"></i> Register</button>
+      </form>
+    </div>
+    <div class="sign-up__question">
+      Already have own CookBook? <a routerLink="/login" class="cb-common-link">Log in</a>
+    </div>
+  </div>
+  <img class="sign-up__image">
 </div>

@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { Observable } from 'rxjs/Observable';
 
 import { AuthService } from '../auth.service';
-import { CollectionReference } from '@firebase/firestore-types';
 
 @Component({
   selector: 'cb-login',

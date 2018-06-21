@@ -112,7 +112,7 @@
 
 .on-desktop {
   text-align: center;
-  margin: 110px auto 0 auto;
+  margin: 0 auto;
 }
 
 .on-desktop__available,
@@ -124,6 +124,7 @@
   font-size: 26px;
   font-weight: 600;
 }
+
 .on-desktop__info {
   max-width: 700px;
   width: 100%;
@@ -165,9 +166,13 @@
       'first'
       'second';
 
+    .first-area,
+    .second-area {
+      justify-self: center;
+    }
+
     .first-area {
       width: 290px;
-      justify-self: center;
       grid-area: first;
     }
 
@@ -179,7 +184,4 @@
   .landing__common-image {
     content: url('../../assets/images/login_mobile.png');
   }
-}
-
-@media screen and (max-height: 570px) {
 }

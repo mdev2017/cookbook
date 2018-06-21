@@ -16,6 +16,7 @@ import { NavigationMenuComponent } from './navigation-menu/navigation-menu.compo
 import { CategoriesComponent } from './categories/categories.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LandingComponent } from './landing/landing.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LandingComponent } from './landing/landing.component';
     CategoriesComponent,
     PageNotFoundComponent,
     LandingComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

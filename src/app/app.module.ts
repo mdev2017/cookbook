@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NavigationMenuComponent,
     CategoriesComponent,
     PageNotFoundComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,

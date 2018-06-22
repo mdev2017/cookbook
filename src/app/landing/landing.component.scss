@@ -111,6 +111,7 @@
 }
 
 .on-desktop {
+  padding-top: 70px;
   text-align: center;
   margin: 0 auto;
 }
@@ -154,7 +155,7 @@
     margin-top: 50px;
   }
 
-  .info-container:not(:last-child) {
+  .info-container {
     padding-bottom: 70px;
   }
 
@@ -179,6 +180,10 @@
     .second-area {
       grid-area: second;
     }
+  }
+
+  .on-desktop {
+    padding-top: 0;
   }
 
   .landing__common-image {

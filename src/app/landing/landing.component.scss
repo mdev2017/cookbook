@@ -1,0 +1,238 @@
+@import "variables";
+
+.landing {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing__common-image {
+  position: absolute;
+  max-height: 100%;
+  height: auto;
+  right: 0;
+  content: url('../../assets/images/login.png');
+  background-repeat: no-repeat;
+}
+
+.landing__common-block {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-items: center;
+  position: relative;
+  height: 100vh;
+}
+
+.landing__create-cb {
+  width: 336px;
+  display: grid;
+  grid-template-rows: 220px repeat(3, max-content);
+  z-index: 100;
+
+  .title {
+    align-self: center;
+    margin-bottom: 60px;
+  }
+  
+  .question {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.31;
+  }
+  
+  .description {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.63;
+    align-self: start;
+  }
+
+  .create-book-button {
+    margin-top: 40px;
+  }
+}
+
+.allow-text {
+  font-size: 23px;
+  font-weight: 600;
+  color: $tundora;
+  height: 70px;
+  margin-top: 110px;
+  text-align: center;
+}
+
+.allow-text__cook,
+.allow-text__book {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.allow-text__cook {
+  color: $pizazz;
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(540px, auto);
+  align-items: center;
+}
+
+.info-container__block {
+  display: grid;
+  grid-row-gap: 15px;
+}
+
+.info-container__block.center {
+  justify-self: center;
+}
+
+.info-container__block__title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.info-container__block__description {
+  font-size: 16px;
+  line-height: 1.63;
+  width: 100%;
+  max-width: 350px;
+}
+
+.info-container__image-center {
+  justify-self: center;
+}
+
+.info-container__image {
+  width: 100%;
+  max-width: 512px;
+}
+
+.on-desktop {
+  padding-top: 70px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.on-desktop__available,
+.on-desktop__block-image {
+  margin-bottom: 60px;
+}
+
+.on-desktop__available {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.on-desktop__info {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 60px auto;
+}
+
+.on-desktop__image {
+  max-width: 844px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1025px) {
+  .landing__common-block {
+    grid-template-columns: 1fr;
+  }
+
+  .landing__create-cb {
+    width: 290px;
+
+    .title {
+      margin-bottom: 0;
+    }
+  }
+
+  .allow-text {
+    height: 90px;
+    margin-top: 50px;
+  }
+
+  .info-container {
+    padding-bottom: 70px;
+  }
+
+  .info-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-row-gap: 15px;
+    grid-template-areas:
+      'first'
+      'second';
+
+    .first-area,
+    .second-area {
+      justify-self: center;
+    }
+
+    .first-area {
+      width: 290px;
+      grid-area: first;
+    }
+
+    .second-area {
+      grid-area: second;
+    }
+  }
+
+  .on-desktop {
+    padding-top: 0;
+  }
+
+  .landing__common-image {
+    content: url('../../assets/images/login_mobile.png');
+  }
+}
+
+.footer {
+  margin-top: 50px;
+  font-size: 14px;
+  color: $tundora;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-areas:
+    'copyright links';
+  align-items: center;
+  min-height: 135px;
+  margin: 0 auto;
+  max-width: 824px;
+  border-top: 2px solid $alabaster;
+}
+
+.footer__copyright {
+  grid-area: copyright;
+}
+
+.footer__links {
+  justify-self: end;
+  grid-area: links;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 10px;
+}
+
+@media screen and (max-width: 824px) {
+  .footer__container {
+    margin: 0 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer__container {
+    grid-template-areas:
+      'links'
+      'copyright';
+  }
+
+  .footer__links {
+    justify-self: stretch;
+    grid-template-columns: auto;
+    grid-row-gap: 10px;
+  }
+}

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="492" height="282" viewBox="0 0 492 282">
+    <defs>
+        <rect id="f" width="450" height="239.157" y="30" rx="5.5"/>
+        <filter id="e" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dy="6" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+        </filter>
+        <rect id="h" width="450" height="239.157" rx="5.5"/>
+        <filter id="g" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+            <feOffset dy="6" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+        </filter>
+        <rect id="a" width="20" height="20" x="27.686" y="26.99" rx="2"/>
+        <mask id="i" width="20" height="20" x="0" y="0" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <rect id="b" width="20" height="20" x="27.686" y="82.049" rx="2"/>
+        <mask id="j" width="20" height="20" x="0" y="0" fill="#fff">
+            <use xlink:href="#b"/>
+        </mask>
+        <rect id="c" width="20" height="20" x="27.686" y="137.108" rx="2"/>
+        <mask id="k" width="20" height="20" x="0" y="0" fill="#fff">
+            <use xlink:href="#c"/>
+        </mask>
+        <rect id="d" width="20" height="20" x="27.686" y="192.168" rx="2"/>
+        <mask id="l" width="20" height="20" x="0" y="0" fill="#fff">
+            <use xlink:href="#d"/>
+        </mask>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(6)">
+            <use fill="#000" filter="url(#e)" xlink:href="#f"/>
+            <use fill="#FFF" xlink:href="#f"/>
+        </g>
+        <g transform="translate(36)">
+            <use fill="#000" filter="url(#g)" xlink:href="#h"/>
+            <use fill="#FFF" xlink:href="#h"/>
+            <path fill="#FFF" d="M22.861 10.725h417.225v53.623H22.861zM15.908 65.42h417.225v53.623H15.908zM15.908 120.115h417.225v53.623H15.908zM15.908 174.81h417.225v53.623H15.908z"/>
+            <use stroke="#EEE" stroke-width="2" mask="url(#i)" xlink:href="#a"/>
+            <use stroke="#EEE" stroke-width="2" mask="url(#j)" xlink:href="#b"/>
+            <use stroke="#EEE" stroke-width="2" mask="url(#k)" xlink:href="#c"/>
+            <use stroke="#EEE" stroke-width="2" mask="url(#l)" xlink:href="#d"/>
+            <path fill="#FF8302" d="M38.018 41.888a1.484 1.484 0 0 1-2.135 0l-3.308-3.39a1.573 1.573 0 0 1 0-2.186 1.484 1.484 0 0 1 2.135 0l1.97 2.019c.15.152.39.152.54 0l5.336-5.467a1.484 1.484 0 0 1 2.135 0c.283.29.442.683.442 1.093 0 .41-.16.804-.442 1.094l-6.673 6.837zM38.018 96.583a1.484 1.484 0 0 1-2.135 0l-3.308-3.389a1.573 1.573 0 0 1 0-2.187 1.484 1.484 0 0 1 2.135 0l1.97 2.019c.15.152.39.152.54 0l5.336-5.467a1.484 1.484 0 0 1 2.135 0c.283.29.442.683.442 1.093 0 .41-.16.804-.442 1.094l-6.673 6.837z"/>
+            <text fill="#9B9B9B" font-family="OpenSans-Regular, Open Sans" font-size="16">
+                <tspan x="73.855" y="42.884">Dark Chocolate</tspan>
+            </text>
+            <text fill="#9B9B9B" font-family="OpenSans-Regular, Open Sans" font-size="16">
+                <tspan x="73.855" y="97.579">Cocoa Powder</tspan>
+            </text>
+            <text fill="#4A4A4A" font-family="OpenSans-Regular, Open Sans" font-size="16">
+                <tspan x="73.855" y="152.274">Lemons</tspan>
+            </text>
+            <text fill="#4A4A4A" font-family="OpenSans-Regular, Open Sans" font-size="16">
+                <tspan x="73.855" y="206.969">Yogurt</tspan>
+            </text>
+            <text fill="#9B9B9B" font-family="OpenSans-Regular, Open Sans" font-size="16">
+                <tspan x="392.643" y="42.884">80 g</tspan>
+            </text>
+            <text fill="#9B9B9B" font-family="OpenSans-Regular, Open Sans" font-size="16">
+                <tspan x="392.643" y="96.507">60 g</tspan>
+            </text>
+            <text fill="#4A4A4A" font-family="OpenSans-Regular, Open Sans" font-size="16">
+                <tspan x="414.713" y="151.202">2</tspan>
+            </text>
+            <text fill="#4A4A4A" font-family="OpenSans-Regular, Open Sans" font-size="16">
+                <tspan x="387.471" y="200.535">4 tsp </tspan>
+            </text>
+            <path fill="#F8F8F8" d="M73.932 64.347h359.277v1.072H73.932zM73.932 119.042h359.277v1.072H73.932zM73.932 173.738h359.277v1.072H73.932z"/>
+        </g>
+    </g>
+</svg>

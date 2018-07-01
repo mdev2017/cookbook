@@ -1,9 +1,9 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "./assets/fonts/fonts";
+@import "../assets/fonts/fonts";
 
-@import "./styles/buttons.scss";
-@import "./styles/links.scss";
-@import "./styles/inputs.scss";
+@import "./buttons.scss";
+@import "./links.scss";
+@import "./inputs.scss";
 
 html,
 body {
@@ -13,6 +13,7 @@ body {
 }
 
 cb-login,
-cb-sign-up {
+cb-sign-up,
+cb-landing {
   width: 100%;
 }

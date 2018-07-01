@@ -1,11 +1,11 @@
-@import "../../../styles/colors.scss";
+@import "variables";
 
 .sign-up {
   display: grid;
   height: 100%;
   grid-template-columns: 3fr 1fr;
   justify-items: center;
-  color: $common-text;
+  color: $mine-shaft;
 }
 
 .sign-up__container {
@@ -85,7 +85,7 @@ label,
   font-weight: 500;
   z-index: 100;
   min-width: 270px;
-  color: $second-text;
+  color: $black;
 }
 
 .ng-invalid.ng-touched:not(form){

@@ -1,3 +1,5 @@
+@import "variables";
+
 .categories-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -26,7 +28,7 @@
 .category-name {
   font-size: 24px;
   font-weight: 600;
-  color: #444444;
+  color: $tundora-darker;
   text-transform: capitalize;
   letter-spacing: 0.03em;
 }

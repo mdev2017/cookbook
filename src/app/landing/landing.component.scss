@@ -1,10 +1,8 @@
-@import "../../styles/fonts.scss";
 @import "../../styles/colors.scss";
 
 .landing {
   display: flex;
   flex-direction: column;
-  font-family: $open-sans;
 }
 
 .landing__common-image {
@@ -66,7 +64,6 @@
 .allow-text__book {
   font-size: 24px;
   font-weight: 900;
-  font-family: $avenir;
 }
 
 .allow-text__cook {

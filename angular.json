@@ -30,6 +30,9 @@
               "src/styles/styles.scss",
               "./node_modules/font-awesome/scss/font-awesome.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["./src/styles"]
+            },
             "scripts": []
           },
           "configurations": {

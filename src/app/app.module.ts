@@ -12,18 +12,21 @@ import { AuthGuard } from './auth/auth.guard';
 import { environment } from '../environments/environment.prod';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LandingComponent } from './landing/landing.component';
+import { CookbookModule } from './cookbook/cookbook.module';
+import { MenuComponent } from './menu/menu.component';
+import { GroceryComponent } from './grocery/grocery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationMenuComponent,
     CategoriesComponent,
     PageNotFoundComponent,
     LandingComponent,
+    MenuComponent,
+    GroceryComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { LandingComponent } from './landing/landing.component';
     AngularFirestoreModule,
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
+    CookbookModule,
     AuthModule,
     AppRoutingModule,
   ],

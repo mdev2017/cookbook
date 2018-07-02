@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
+import { AuthService } from '../auth/auth.service';
 @Component({
   selector: 'cb-landing',
   templateUrl: './landing.component.html',
@@ -8,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class LandingComponent implements OnInit {
   currentYear: number;
 
-  constructor() { }
+  constructor(authService: AuthService, router: Router) {
+    authService.isAuthenticated
+      .subscribe(authenticated => {
+        authenticated && router.navigate(['/recipes']);
+      });
+  }
 
   ngOnInit() {
     this.currentYear = new Date().getFullYear();
   }
-
 }

@@ -1,6 +1,82 @@
+@import 'variables';
+@import '../assets/fonts/fonts.scss';
+
+.navigation {
+  position: relative;
+  height: 100%;
+  background-image: linear-gradient(346deg, $pizazz, $selective-yellow)
+}
+
+.navigation__block {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 110px 1fr 80px;
+  z-index: 100;
+}
+
+.navigation__title {
+  font-size: 24px;
+  font-weight: 900;
+  align-self: center;
+  justify-self: center;
+  font-family: $avenir;
+  color: $alabaster;
+}
+
 nav {
   display: flex;
   flex-direction: column;
-  border: 1px solid;
-  height: 100%;
+}
+
+.navigation__menu-link {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  font-family: $open-sans;
+  font-size: 18px;
+  color: $white;
+  text-decoration: none;
+  opacity: 0.7;
+  outline: none;
+
+  &.active {
+    opacity: 1;
+    background-color: $safety-orange-025;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.navigation__menu-link a {
+  padding-left: 40px;
+}
+
+.navigation__menu-link,
+.navigation__profile {
+  z-index: 100;
+}
+
+.navigation__profile {
+  color: $white;
+  align-self: center;
+  justify-self: center;
+
+  .fa {
+    font-size: 1.633333em;
+    padding-left: 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.navigation__image {
+  position: absolute;
+  max-height: 100%;
+  height: auto;
+  bottom: 0;
+  content: url('../../assets/images/nav-menu/nav-background.svg');
 }

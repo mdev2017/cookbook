@@ -1,3 +1,4 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { CookbookRoutingModule } from './cookbook-routing.module';
@@ -7,6 +8,7 @@ import { NavigationMenuComponent } from '../navigation-menu/navigation-menu.comp
 
 @NgModule({
     imports: [
+      BrowserModule,
       CookbookRoutingModule,
     ],
     declarations: [

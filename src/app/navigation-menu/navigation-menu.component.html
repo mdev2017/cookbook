@@ -1,27 +1,37 @@
-<div class="navigation">
-  <div class="navigation__block">
-    <div class="navigation__title">
-      CookBook
-    </div>
-    <nav class="navigation__menu">
-      <div
-        class="navigation__menu-link"
-        *ngFor="let item of menuItems"
-        routerLink="{{item.link}}"
-        routerLinkActive="active"
-      >
-        <a>
-          {{item.name}}
-        </a>
-      </div>
-    </nav>
-    <div
-      class="navigation__profile"
-      routerLink="/profile"
-      routerLinkActive="active"
-    >
-      {{displayName}} <i class="fa fa-lg fa-angle-right"></i>
+<div (appClickOutside)="isSidebar && isSidebar = false" style="height: 100%;">
+  <div class="navigation__humb"(click)="showSidebar()">
+    <div>
+      <i
+        class="fa fa-lg"
+        [ngClass]="{'fa-align-justify': !isSidebar, 'fa-times': isSidebar}"
+      ></i>
     </div>
   </div>
-  <img class="navigation__image">
+  <div class="navigation" [ngClass]="{'invisible': !isSidebar}">
+    <div class="navigation__block">
+      <div class="navigation__title">
+        CookBook
+      </div>
+      <nav class="navigation__menu">
+        <div
+          class="navigation__menu-link"
+          *ngFor="let item of menuItems"
+          routerLink="{{item.link}}"
+          routerLinkActive="active"
+        >
+          <a>
+            {{item.name}}
+          </a>
+        </div>
+      </nav>
+      <div
+        class="navigation__profile"
+        routerLink="/profile"
+        routerLinkActive="active"
+      >
+        {{displayName}} <i class="fa fa-lg fa-angle-right"></i>
+      </div>
+    </div>
+    <img class="navigation__image">
+  </div>
 </div>

@@ -2,9 +2,16 @@
 @import '../assets/fonts/fonts.scss';
 
 .navigation {
+  left: 0;
   position: relative;
   height: 100%;
-  background-image: linear-gradient(346deg, $pizazz, $selective-yellow)
+  width: 200px;
+  background-image: linear-gradient(346deg, $pizazz, $selective-yellow);
+  transition: 0.5s;
+}
+
+.navigation__humb {
+  display: none;
 }
 
 .navigation__block {
@@ -79,4 +86,32 @@ nav {
   height: auto;
   bottom: 0;
   content: url('../../assets/images/nav-menu/nav-background.svg');
+}
+
+@media screen and (max-width: 1025px) {
+  .navigation {
+    position: absolute;
+  }
+
+  .navigation.invisible {
+    left: -200px;
+    transition: 0.2s;
+  }
+
+  .navigation__humb {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 50;
+  }
+
+  .fa-times {
+    color: $white;
+  }
+
+  .fa-times {
+    transition: 0.2s;
+    transform: rotate(180deg);
+  }
 }

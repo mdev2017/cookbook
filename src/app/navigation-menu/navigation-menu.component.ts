@@ -23,6 +23,7 @@ export class NavigationMenuComponent implements OnInit {
     },
   ];
   displayName;
+  isSidebar = false;
 
   constructor(private authService: AuthService) { }
 
@@ -30,4 +31,7 @@ export class NavigationMenuComponent implements OnInit {
     this.authService.user.subscribe((user: any) => this.displayName = user.displayName);
   }
 
+  showSidebar() {
+    this.isSidebar = !this.isSidebar;
+  }
 }

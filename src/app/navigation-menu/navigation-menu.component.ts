@@ -22,16 +22,17 @@ export class NavigationMenuComponent implements OnInit {
       name: 'Grocery',
     },
   ];
-  displayName;
   isSidebar = false;
 
   constructor(private authService: AuthService) { }
 
-  ngOnInit() {
-    this.authService.user.subscribe((user: any) => this.displayName = user.displayName);
-  }
+  ngOnInit() { }
 
   showSidebar() {
     this.isSidebar = !this.isSidebar;
+  }
+
+  hideSidebar() {
+    return this.isSidebar && (this.isSidebar = false);
   }
 }

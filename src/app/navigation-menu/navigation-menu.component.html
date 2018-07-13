@@ -1,13 +1,13 @@
-<div (appClickOutside)="isSidebar && isSidebar = false" style="height: 100%;">
+<div (appClickOutside)="hideSidebar()" style="height: 100%;">
   <div class="navigation__humb"(click)="showSidebar()">
     <div>
       <i
         class="fa fa-lg"
-        [ngClass]="{'fa-align-justify': !isSidebar, 'fa-times': isSidebar}"
+        [ngClass]="isSidebar ? 'fa-times' : 'fa-align-justify'"
       ></i>
     </div>
   </div>
-  <div class="navigation" [ngClass]="{'invisible': !isSidebar}">
+  <div class="navigation" [class.invisible]="!isSidebar">
     <div class="navigation__block">
       <div class="navigation__title">
         CookBook
@@ -29,7 +29,7 @@
         routerLink="/profile"
         routerLinkActive="active"
       >
-        {{displayName}} <i class="fa fa-lg fa-angle-right"></i>
+        {{(this.authService.user | async).displayName}} <i class="fa fa-lg fa-angle-right"></i>
       </div>
     </div>
     <img class="navigation__image">

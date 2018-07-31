@@ -1,5 +1,37 @@
-<nav>
-  <a routerLink="/" routerLinkActive="active">item 1</a>
-  <a routerLink="/item2" routerLinkActive="active">item 2</a>
-  <a routerLink="/item3" routerLinkActive="active">item 3</a>
-</nav>
+<div (appClickOutside)="hideSidebar()" style="height: 100%;">
+  <div class="navigation__humb"(click)="showSidebar()">
+    <div>
+      <i
+        class="fa fa-lg"
+        [ngClass]="isSidebar ? 'fa-times' : 'fa-align-justify'"
+      ></i>
+    </div>
+  </div>
+  <div class="navigation" [class.invisible]="!isSidebar">
+    <div class="navigation__block">
+      <div class="navigation__title">
+        CookBook
+      </div>
+      <nav class="navigation__menu">
+        <div
+          class="navigation__menu-link"
+          *ngFor="let item of menuItems"
+          routerLink="{{item.link}}"
+          routerLinkActive="active"
+        >
+          <a>
+            {{item.name}}
+          </a>
+        </div>
+      </nav>
+      <div
+        class="navigation__profile"
+        routerLink="/profile"
+        routerLinkActive="active"
+      >
+        {{(this.authService.user | async).displayName}} <i class="fa fa-lg fa-angle-right"></i>
+      </div>
+    </div>
+    <img class="navigation__image">
+  </div>
+</div>

@@ -12,6 +12,7 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   isPasswordType = true;
+  isLoading = false;
 
   constructor(
     private authService: AuthService,
@@ -31,10 +32,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.isLoading = true;
     this.authService.login(this.loginForm.value)
       .then(() => {
+        this.isLoading = false;
         this.navigateByDefault();
-      });
+      })
+      .catch(() => this.isLoading = false);
   }
 
   private navigateByDefault() {

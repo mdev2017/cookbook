@@ -38,7 +38,8 @@
         </div>
         <button
           class="cb-common-btn sign-up__submit-button"
-          [disabled]="!signUpForm.valid"
+          [disabled]="isLoading || !signUpForm.valid"
+          [class.loading]="isLoading"
         ><i class="fa fa-lg fa-check"></i> Register</button>
       </form>
     </div>

@@ -30,8 +30,11 @@
         </div>
         <button
           class="cb-common-btn login-button"
-          [disabled]="!loginForm.valid"
-        ><i class="fa fa-lg fa-check"></i> Login</button>
+          [disabled]="isLoading || !loginForm.valid"
+          [class.loading]="isLoading"
+        >
+          <i class="fa fa-lg fa-check"></i> Login
+        </button>
       </form>
     </div>
     <div class="login-question">

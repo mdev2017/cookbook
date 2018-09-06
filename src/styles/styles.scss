@@ -5,6 +5,10 @@
 @import "./links.scss";
 @import "./inputs.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
@@ -16,4 +20,8 @@ cb-login,
 cb-sign-up,
 cb-landing {
   width: 100%;
+}
+
+div {
+  outline: none;
 }

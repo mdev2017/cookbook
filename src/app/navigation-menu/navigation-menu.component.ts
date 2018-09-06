@@ -8,17 +8,17 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./navigation-menu.component.scss'],
 })
 export class NavigationMenuComponent implements OnInit {
-  menuItems = [
+  menuLinks = [
     {
-      link: '/recipes',
+      path: '/recipes',
       name: 'Recipes',
     },
     {
-      link: '/menu',
+      path: '/menu',
       name: 'Weekly Menu',
     },
     {
-      link: '/grocery',
+      path: '/grocery',
       name: 'Grocery',
     },
   ];

@@ -1,37 +1,29 @@
-<div (appClickOutside)="hideSidebar()" style="height: 100%;">
-  <div class="navigation__humb"(click)="showSidebar()">
-    <div>
-      <i
-        class="fa fa-lg"
-        [ngClass]="isSidebar ? 'fa-times' : 'fa-align-justify'"
-      ></i>
+<div class="nav-menu">
+  <div class="nav-menu__content">
+    <div class="nav-menu__logo" [routerLink]="['/']">
+      CookBook
     </div>
-  </div>
-  <div class="navigation" [class.invisible]="!isSidebar">
-    <div class="navigation__block">
-      <div class="navigation__title">
-        CookBook
-      </div>
-      <nav class="navigation__menu">
+    <div class="nav-menu__items">
+      <nav class="nav-menu__links">
         <div
-          class="navigation__menu-link"
-          *ngFor="let item of menuItems"
-          routerLink="{{item.link}}"
+          class="nav-menu__menu-link"
+          *ngFor="let link of menuLinks"
+          routerLink="{{link.path}}"
           routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"
         >
-          <a>
-            {{item.name}}
-          </a>
+          {{link.name}}
         </div>
       </nav>
-      <div
-        class="navigation__profile"
-        routerLink="/profile"
-        routerLinkActive="active"
-      >
-        {{(this.authService.user | async).displayName}} <i class="fa fa-lg fa-angle-right"></i>
+      <div class="nav-menu__user">
+        <div
+          class="nav-menu__user-name"
+          routerLink="/profile"
+          routerLinkActive="active"
+        >
+          {{(this.authService.user | async)?.displayName}}
+        </div>
       </div>
     </div>
-    <img class="navigation__image">
   </div>
 </div>

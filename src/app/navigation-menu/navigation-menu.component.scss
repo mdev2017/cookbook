@@ -1,117 +1,95 @@
 @import 'variables';
 @import '../assets/fonts/fonts.scss';
 
-.navigation {
-  left: 0;
-  position: relative;
-  height: 100%;
-  width: 200px;
+.nav-menu {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background: $white;
+  color: $mine-shaft;
   background-image: linear-gradient(346deg, $pizazz, $selective-yellow);
-  transition: 0.5s;
-}
-
-.navigation__humb {
-  display: none;
-}
-
-.navigation__block {
-  height: 100%;
-  display: grid;
-  grid-template-rows: 110px 1fr 80px;
   z-index: 100;
 }
 
-.navigation__title {
+.nav-menu__content {
+  display: flex;
+  height: inherit;
+  align-items: center;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.nav-menu__logo {
   font-size: 24px;
   font-weight: 900;
   align-self: center;
   justify-self: center;
+  padding-right: 60px;
   font-family: $open-sans;
   color: $alabaster;
+  cursor: pointer;
 }
 
-nav {
+.nav-menu__items {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  height: inherit;
 }
 
-.navigation__menu-link {
+.nav-menu__links {
+  display: flex;
+}
+
+.nav-menu__menu-link {
   display: flex;
   align-items: center;
-  height: 60px;
-  font-family: $open-sans;
-  font-size: 18px;
+  padding: 0 10px;
   color: $white;
-  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
   opacity: 0.7;
-  outline: none;
+
+  &.active:hover,
+  &:hover {
+    cursor: pointer;
+  }
 
   &.active {
     opacity: 1;
     background-color: $safety-orange-025;
   }
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
-.navigation__menu-link a {
-  padding-left: 40px;
+.nav-menu__user {
+  display: flex;
+  align-items: center;
 }
 
-.navigation__menu-link,
-.navigation__profile {
-  z-index: 100;
-}
-
-.navigation__profile {
+.nav-menu__user-name {
+  max-width: 150px;
+  margin-left: 10px;
   color: $white;
-  align-self: center;
-  justify-self: center;
-
-  .fa {
-    font-size: 1.633333em;
-    padding-left: 10px;
-  }
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   &:hover {
     cursor: pointer;
   }
-}
-
-.navigation__image {
-  position: absolute;
-  max-height: 100%;
-  height: auto;
-  bottom: 0;
-  content: url('../../assets/images/nav-menu/nav-background.svg');
 }
 
 @media screen and (max-width: 1025px) {
-  .navigation {
-    position: absolute;
+  .nav-menu__content {
+    margin: 0 10px;
   }
 
-  .navigation.invisible {
-    left: -200px;
-    transition: 0.2s;
+  .nav-menu__logo {
+    display: none;
   }
 
-  .navigation__humb {
-    display: block;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 50;
-  }
-
-  .fa-times {
-    color: $white;
-  }
-
-  .fa-times {
-    transition: 0.2s;
-    transform: rotate(180deg);
+  .nav-menu__items {
+    display: none;
   }
 }

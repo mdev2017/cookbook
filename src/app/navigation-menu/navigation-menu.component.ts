@@ -8,6 +8,7 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./navigation-menu.component.scss'],
 })
 export class NavigationMenuComponent implements OnInit {
+  isSideMenuVisible = false;
   menuLinks = [
     {
       path: '/recipes',
@@ -27,12 +28,4 @@ export class NavigationMenuComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() { }
-
-  showSidebar() {
-    this.isSidebar = !this.isSidebar;
-  }
-
-  hideSidebar() {
-    return this.isSidebar && (this.isSidebar = false);
-  }
 }

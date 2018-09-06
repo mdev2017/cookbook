@@ -1,0 +1,26 @@
+<div class="side-menu" [style.width]="isVisible ? '100%': 0">
+  <i class="fa fa-2x fa-times side-menu__close-btn" (click)="hideSideNavMenu()"></i>
+  <div
+    class="side-menu__content"
+  >
+    <div
+      *ngFor="let link of menuLinks"
+      class="side-menu__menu-link"
+      routerLink="{{link.path}}"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+      (click)="hideSideNavMenu()"
+    >
+      {{link.name}}
+    </div>
+    <div class="side-menu__user">
+      <div
+        class="side-menu__user-name"
+        routerLink="/profile"
+        routerLinkActive="active"
+      >
+        {{(this.authService.user | async)?.displayName}}
+      </div>
+    </div>
+  </div>
+</div>

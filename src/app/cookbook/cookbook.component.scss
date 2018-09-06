@@ -9,3 +9,9 @@
   max-width: 1024px;
   width: 100%;
 }
+
+@media screen and (max-width: 1025px) {
+  .wrapper {
+    margin: 0 10px;
+  }
+}

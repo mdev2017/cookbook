@@ -5,7 +5,7 @@ import { CookbookRoutingModule } from './cookbook-routing.module';
 
 import { CookbookComponent } from './cookbook.component';
 import { NavigationMenuComponent } from '../navigation-menu/navigation-menu.component';
-import { OutsideDirective } from '../directives/outside.directive';
+import { SideNavigationMenuComponent } from '../side-navigation-menu/side-navigation-menu.component';
 
 @NgModule({
     imports: [
@@ -15,7 +15,7 @@ import { OutsideDirective } from '../directives/outside.directive';
     declarations: [
       CookbookComponent,
       NavigationMenuComponent,
-      OutsideDirective,
+      SideNavigationMenuComponent,
     ],
 })
 export class CookbookModule {}

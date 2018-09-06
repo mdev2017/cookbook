@@ -80,6 +80,10 @@
   }
 }
 
+.nav-menu__humb {
+  display: none;
+}
+
 @media screen and (max-width: 1025px) {
   .nav-menu__content {
     margin: 0 10px;
@@ -91,5 +95,11 @@
 
   .nav-menu__items {
     display: none;
+  }
+
+  .nav-menu__humb {
+    display: inline-block;
+    color: $white;
+    cursor: pointer;
   }
 }

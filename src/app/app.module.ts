@@ -18,6 +18,7 @@ import { LandingComponent } from './landing/landing.component';
 import { CookbookModule } from './cookbook/cookbook.module';
 import { MenuComponent } from './menu/menu.component';
 import { GroceryComponent } from './grocery/grocery.component';
+import { AnimatedBlockComponent } from './landing/animated-block/animated-block.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { GroceryComponent } from './grocery/grocery.component';
     LandingComponent,
     MenuComponent,
     GroceryComponent,
+    AnimatedBlockComponent,
   ],
   imports: [
     BrowserModule,

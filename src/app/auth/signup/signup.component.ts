@@ -12,6 +12,7 @@ import { AuthService } from '../auth.service';
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   isPasswordType = true;
+  isLoading = false;
 
   constructor(
     private authService: AuthService,
@@ -32,10 +33,13 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
+    this.isLoading = true;
     this.authService.signUp(this.signUpForm.value)
       .then(() => {
+        this.isLoading = false;
         this.navigateByDefault();
-      });
+      })
+      .catch(() => this.isLoading = false);
   }
 
   private navigateByDefault() {
